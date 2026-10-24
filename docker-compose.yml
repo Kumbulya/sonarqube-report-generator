@@ -10,5 +10,5 @@ services:
     command: tail -f /dev/null
     image: sonarsource/sonar-scanner-cli:12.2
     volumes:
-      - ./sr:/script
+      - .:/script
       - ./test:/usr/src/target

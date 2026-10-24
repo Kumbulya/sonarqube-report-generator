@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  sonarqube-server:
+    image: sonarqube:community
+    ports:
+      - 9000:9000
+  sonarqube-scanner:
+    entrypoint: []
+    command: tail -f /dev/null
+    image: sonarsource/sonar-scanner-cli:12.2
+    volumes:
+      - ./sr:/script
+      - ./test:/usr/src/target
